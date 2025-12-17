@@ -1,24 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEf-dq-nW5">
+                                <rect key="frame" x="216" y="641" width="170" height="143"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="+" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="64"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="counterButtonUpDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LOc-Nh-dXQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAk-EK-LPo">
+                                <rect key="frame" x="16" y="124" width="370" height="64"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Sz7-Pq-AzG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" editable="NO" text="История изменений: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-Af-aK6">
+                                <rect key="frame" x="16" y="208" width="370" height="319"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFr-z9-Btm">
+                                <rect key="frame" x="17" y="561" width="369" height="54"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="51M-lW-NQO"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Сбросить значение" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="counterButtonResetDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XrR-2V-u7l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntV-2r-zMz">
+                                <rect key="frame" x="17" y="641" width="170" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="URt-bI-Oyj"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="–" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="64"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="counterButtonDownDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aN5-fr-JQY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VAk-EK-LPo" firstAttribute="trailing" secondItem="IRd-Af-aK6" secondAttribute="trailing" id="25f-Y4-b2S"/>
+                            <constraint firstItem="IRd-Af-aK6" firstAttribute="top" secondItem="VAk-EK-LPo" secondAttribute="bottom" constant="20" id="Gvi-vc-wbN"/>
+                            <constraint firstItem="ntV-2r-zMz" firstAttribute="top" secondItem="gFr-z9-Btm" secondAttribute="bottom" constant="26" id="Hnf-TD-56M"/>
+                            <constraint firstItem="gFr-z9-Btm" firstAttribute="top" secondItem="IRd-Af-aK6" secondAttribute="bottom" constant="34" id="J2P-eH-uB5"/>
+                            <constraint firstItem="IRd-Af-aK6" firstAttribute="centerX" secondItem="gFr-z9-Btm" secondAttribute="centerX" id="Pxd-tW-5R8"/>
+                            <constraint firstItem="VAk-EK-LPo" firstAttribute="leading" secondItem="IRd-Af-aK6" secondAttribute="leading" id="WGW-g3-TT6"/>
+                            <constraint firstItem="IRd-Af-aK6" firstAttribute="trailing" secondItem="gFr-z9-Btm" secondAttribute="trailing" id="al1-3j-YC5"/>
+                            <constraint firstItem="VAk-EK-LPo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bFY-s4-nQb"/>
+                            <constraint firstItem="VAk-EK-LPo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cJg-1I-DVA"/>
+                            <constraint firstItem="UEf-dq-nW5" firstAttribute="leading" secondItem="ntV-2r-zMz" secondAttribute="trailing" constant="29" id="d2N-4p-rke"/>
+                            <constraint firstItem="ntV-2r-zMz" firstAttribute="baseline" secondItem="UEf-dq-nW5" secondAttribute="baseline" id="ihI-wq-bOg"/>
+                            <constraint firstItem="gFr-z9-Btm" firstAttribute="trailing" secondItem="UEf-dq-nW5" secondAttribute="trailing" id="pHS-OH-u8f"/>
+                            <constraint firstItem="VAk-EK-LPo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qHe-0K-47j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ntV-2r-zMz" secondAttribute="bottom" constant="22" id="qVr-pj-7te"/>
+                            <constraint firstItem="gFr-z9-Btm" firstAttribute="leading" secondItem="ntV-2r-zMz" secondAttribute="leading" id="wsD-db-60z"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="counterButtonDown" destination="ntV-2r-zMz" id="NYk-rK-OUL"/>
+                        <outlet property="counterButtonReset" destination="gFr-z9-Btm" id="UeP-hE-PxW"/>
+                        <outlet property="counterButtonUp" destination="UEf-dq-nW5" id="6C9-jh-De6"/>
+                        <outlet property="counterLabel" destination="VAk-EK-LPo" id="7kS-cV-O9d"/>
+                        <outlet property="historyTextView" destination="IRd-Af-aK6" id="La3-yh-PkD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.31343283582089" y="130.43478260869566"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.2196078431372549" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
